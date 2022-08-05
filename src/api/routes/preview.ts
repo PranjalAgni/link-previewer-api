@@ -24,7 +24,7 @@ router.get("/", [query("url").isURL()], async (req: Request, res: Response) => {
     });
   } catch (error) {
     return res.status(500).json({
-      error: error.message
+      errors: [error.message]
     });
   }
 });
